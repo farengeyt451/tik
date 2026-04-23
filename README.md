@@ -1,0 +1,69 @@
+# timer
+
+A self-contained .NET 10 console countdown timer. No external dependencies.
+
+## Usage
+
+```
+timer -t <value> -u <unit>
+```
+
+| Flag | Description |
+|------|-------------|
+| `-t` | Time value (positive integer) |
+| `-u` | Time unit (see accepted values below) |
+
+**Accepted units**
+
+| Unit | Accepted values |
+|------|----------------|
+| Seconds | `s`, `sec`, `seconds` |
+| Minutes | `m`, `min`, `minutes` |
+| Hours | `h`, `hr`, `hours` |
+
+Units are case-insensitive.
+
+**Examples**
+
+```
+timer -t 30 -u s
+timer -t 5 -u minutes
+timer -t 1 -u hour
+```
+
+## Display
+
+While the timer is running, the console shows a live progress bar and remaining time updated every second:
+
+```
+[████████░░░░░░░░░░░░] 00:03:42 remaining
+```
+
+When the countdown reaches zero, a short ASCII spinner animation plays followed by a success message.
+
+## Requirements
+
+- .NET 10 SDK
+
+## Build and Run
+
+```
+dotnet build
+dotnet run -- -t 5 -u minutes
+```
+
+Or publish a self-contained binary:
+
+```
+dotnet publish -c Release -r linux-x64 --self-contained
+```
+
+Replace `linux-x64` with your target runtime identifier (`win-x64`, `osx-arm64`, etc.).
+
+## Error Handling
+
+The application validates all input and exits with code `1` on failure, printing a descriptive message and usage hint. Checked conditions include:
+
+- Missing `-t` or `-u` flags
+- Non-numeric or non-positive value for `-t`
+- Unrecognized time unit
