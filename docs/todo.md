@@ -5,21 +5,21 @@
 - [x] Update `timer.csproj` if needed (nullable, implicit usings already enabled)
 
 ## Phase 2: Core Logic
-- [ ] `ArgParser.cs` — parse and validate `-t` / `-u` args, print usage on error
-- [ ] `TimeConverter.cs` — convert value + unit to total seconds, validate > 0
+- [x] `ArgParser.cs` — parse and validate `-t` / `-u` args, print usage on error
+- [x] `TimeConverter.cs` — convert value + unit to total seconds, validate > 0
 
 ## Phase 3: Timer Engine
-- [ ] `TimerEngine.cs` — countdown loop with 1-second tick, call renderer on each tick
+- [x] `TimerEngine.cs` — countdown loop with 1-second tick, call renderer on each tick
 
 ## Phase 4: Console Renderer
-- [ ] `ConsoleRenderer.cs` — in-place progress bar with `Console.SetCursorPosition`
-- [ ] Color support via `Console.ForegroundColor` (no escape codes)
-- [ ] `HH:MM:SS` remaining display
-- [ ] Finish animation: ASCII spinner (~2 sec) + success message
+- [x] `ConsoleRenderer.cs` — in-place progress bar with `Console.SetCursorPosition`
+- [x] Color support via `Console.ForegroundColor` (no escape codes)
+- [x] `HH:MM:SS` remaining display
+- [x] Finish animation: ASCII spinner (~2 sec) + success message
 
 ## Phase 5: Entry Point
-- [ ] `Program.cs` — wire `ArgParser` → `TimeConverter` → `TimerEngine`
-- [ ] Clean exit codes
+- [x] `Program.cs` — wire `ArgParser` → `TimeConverter` → `TimerEngine`
+- [x] Clean exit codes
 
 ## Phase 6: Verification
 - [ ] Manual test: seconds, minutes, hours units and shorthands
