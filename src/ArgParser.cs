@@ -3,7 +3,7 @@ namespace Tik;
 internal static class ArgParser
 {
     private const string Usage =
-        "Usage: timer -t <value> -u <unit>\n" +
+        "Usage: tik -t <value> -u <unit>\n" +
         "       Units: s, sec, seconds, m, min, minutes, h, hr, hours";
 
     public static (int value, TimeUnit unit) Parse(string[] args)

@@ -43,10 +43,10 @@ When the countdown reaches zero, a short ASCII spinner animation plays followed 
 
 ## Installation (Linux)
 
-Download the latest binary from the [Releases](https://github.com/farengeyt451/timer/releases) page and install it to your PATH:
+Download the latest binary from the [Releases](https://github.com/farengeyt451/tik/releases) page and install it to your PATH:
 
 ```bash
-curl -L https://github.com/farengeyt451/timer/releases/latest/download/tik-linux-x64 -o tik
+curl -L https://github.com/farengeyt451/tik/releases/latest/download/tik-linux-x64 -o tik
 chmod +x tik
 sudo mv tik /usr/local/bin/
 ```

@@ -3,7 +3,7 @@
 ## Phase 1: Project Setup
 
 - [x] Create `src/` folder structure
-- [x] Update `timer.csproj` if needed (nullable, implicit usings already enabled)
+- [x] Update `tik.csproj` if needed (nullable, implicit usings already enabled)
 
 ## Phase 2: Core Logic
 
