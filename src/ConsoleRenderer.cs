@@ -10,6 +10,7 @@ internal static class ConsoleRenderer
   {
     _barColor = barColor;
     Console.CursorVisible = false;
+    Console.CancelKeyPress += (_, _) => Console.CursorVisible = true;
     _row = Console.CursorTop;
     Console.WriteLine();
     Console.WriteLine();
