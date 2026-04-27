@@ -16,7 +16,7 @@ internal static class ConsoleRenderer
     Console.WriteLine();
   }
 
-  internal static void Render(int remaining, int total)
+  internal static void Render(int remaining, int total, int frameIndex)
   {
     double progress = total > 0 ? 1.0 - (double)remaining / total : 1.0;
     int filled = (int)(progress * BarWidth);
@@ -24,31 +24,29 @@ internal static class ConsoleRenderer
 
     string bar = new string('█', filled) + new string('░', empty);
     string time = FormatTime(remaining);
+    string animation = GetAnimationFrame(frameIndex);
 
     Console.SetCursorPosition(0, _row);
     Console.ForegroundColor = _barColor;
     Console.Write($"[{bar}] ");
     Console.ForegroundColor = ConsoleColor.White;
-    Console.Write($"{time} remaining   ");
+    Console.Write($"{time} remaining ");
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.Write($"{animation}   ");
     Console.ResetColor();
   }
 
-  internal static void PlayFinish()
+  private static string GetAnimationFrame(int index)
   {
     char[] frames = ['|', '/', '-', '\\'];
-    int iterations = 16;
+    return $"[{frames[index % frames.Length]}]";
+  }
 
-    for (int i = 0; i < iterations; i++)
-    {
-      Console.SetCursorPosition(0, _row + 1);
-      Console.ForegroundColor = ConsoleColor.Yellow;
-      Console.Write($" {frames[i % frames.Length]} ");
-      Console.ResetColor();
-      Thread.Sleep(125);
-    }
-
+  internal static void ShowCompletion()
+  {
     Console.SetCursorPosition(0, _row + 1);
     Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine();
     Console.WriteLine(" Done! Time is up.   ");
     Console.ResetColor();
     Console.CursorVisible = true;
