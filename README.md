@@ -41,9 +41,25 @@ While the timer is running, the console shows a live progress bar and remaining 
 
 When the countdown reaches zero, a short ASCII spinner animation plays followed by a success message.
 
+## Installation (Linux)
+
+Download the latest binary from the [Releases](https://github.com/farengeyt451/timer/releases) page and install it to your PATH:
+
+```bash
+curl -L https://github.com/farengeyt451/timer/releases/latest/download/timer-linux-x64 -o timer
+chmod +x timer
+sudo mv timer /usr/local/bin/
+```
+
+After installation, run it directly:
+
+```
+timer -t 5 -u minutes
+```
+
 ## Requirements
 
-- .NET 10 SDK
+- .NET 10 SDK (only needed if building from source)
 
 ## Build and Run
 
