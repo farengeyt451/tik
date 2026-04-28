@@ -39,7 +39,7 @@ Single-project .NET 10 console application. No external NuGet dependencies — o
 - On completion: calls `ConsoleRenderer.PlayFinish()`
 
 ### `ConsoleRenderer`
-- **Progress bar:** `[████░░░░░░] HH:MM:SS remaining`
+- **Progress bar:** `[████░░░░░░] HH:MM:SS`
 - Uses `Console.SetCursorPosition` to update in-place (no scroll)
 - **Colors:** safe ANSI via `Console.ForegroundColor` (no escape codes — cross-platform safe)
 - **Finish animation:** ASCII spinner frames (`|`, `/`, `-`, `\`) looped for ~2 seconds, then success message

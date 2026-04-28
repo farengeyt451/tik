@@ -46,7 +46,7 @@ tik -t 1 -u hour -c magenta
 While tik is running, the console shows a live progress bar, remaining time, and an animated spinner updated every second:
 
 ```
-[████████░░░░░░░░░░░░] 00:03:42 remaining [/]
+[████████░░░░░░░░░░░░] 00:03:42 [/]
 ```
 
 When the countdown reaches zero, a success message appears.

@@ -30,8 +30,8 @@ internal static class ConsoleRenderer
     Console.ForegroundColor = _barColor;
     Console.Write($"[{bar}] ");
     Console.ForegroundColor = ConsoleColor.White;
-    Console.Write($"{time} remaining ");
-    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.Write($"{time} ");
+    Console.ForegroundColor = _barColor;
     Console.Write($"{animation}   ");
     Console.ResetColor();
   }

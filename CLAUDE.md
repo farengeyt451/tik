@@ -25,7 +25,7 @@ Units accepted: `s`, `sec`, `seconds`, `m`, `min`, `minutes`, `h`, `hr`, `hours`
 ## Key Decisions
 
 - Binary name: `tik` (renamed from `timer` to avoid PATH conflicts)
-- Progress bar display: `[████░░░░░░] HH:MM:SS remaining`
+- Progress bar display: `[████░░░░░░] HH:MM:SS`
 - Finish: ASCII spinner (~2 sec) + success message
 - Colors via `Console.ForegroundColor` only (no ANSI escape codes — cross-platform safe)
 - In-place rendering via `Console.SetCursorPosition` (no scroll jitter)

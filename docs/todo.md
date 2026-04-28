@@ -18,7 +18,7 @@
 
 - [x] `ConsoleRenderer.cs` — in-place progress bar with `Console.SetCursorPosition`
 - [x] Color support via `Console.ForegroundColor` (no escape codes)
-- [x] `HH:MM:SS` remaining display
+- [x] `HH:MM:SS` display
 - [x] Finish animation: ASCII spinner (~2 sec) + success message
 
 ## Phase 5: Entry Point
