@@ -26,7 +26,7 @@ internal static class ConsoleRenderer
     string time = FormatTime(remaining);
     string animation = GetAnimationFrame(frameIndex);
 
-    Console.SetCursorPosition(0, _row);
+    Console.SetCursorPosition(0, SafeRow(_row));
     Console.ForegroundColor = _barColor;
     Console.Write($"[{bar}] ");
     Console.ForegroundColor = ConsoleColor.White;
@@ -44,13 +44,16 @@ internal static class ConsoleRenderer
 
   internal static void ShowCompletion()
   {
-    Console.SetCursorPosition(0, _row + 1);
+    Console.SetCursorPosition(0, SafeRow(_row + 1));
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine();
     Console.WriteLine(" Done! Time is up.   ");
     Console.ResetColor();
     Console.CursorVisible = true;
   }
+
+  private static int SafeRow(int row) =>
+      Math.Clamp(row, 0, Console.BufferHeight - 1);
 
   private static string FormatTime(int totalSeconds)
   {
