@@ -7,6 +7,7 @@ A self-contained .NET 10 console countdown utility. No external dependencies.
 ```bash
 tik -t <value> -u <unit> [-c <color>]
 tik --time <value> --unit <unit> [--color <color>]
+tik -h | --help
 tik -v | --version
 ```
 
@@ -15,6 +16,7 @@ tik -v | --version
 | `-t, --time` | Time value (positive integer) |
 | `-u, --unit` | Time unit (see accepted values below) |
 | `-c, --color` | Progress bar color (optional, default: `cyan`) |
+| `-h, --help` | Show help message |
 | `-v, --version` | Display version information |
 
 **Accepted units**

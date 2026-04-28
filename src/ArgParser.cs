@@ -4,17 +4,25 @@ internal static class ArgParser
 {
   private const string Usage =
       "Usage: tik -t <value> -u <unit> [-c <color>]\n" +
+      "       tik -h | --help\n" +
       "       tik -v | --version\n" +
       "Flags:\n" +
       "  -t, --time <value>    Time value (positive integer)\n" +
       "  -u, --unit <unit>     Time unit\n" +
       "  -c, --color <color>   Progress bar color (optional, default: cyan)\n" +
+      "  -h, --help            Show this help message\n" +
       "  -v, --version         Display version information\n" +
       "Units:  s, sec, seconds, m, min, minutes, h, hr, hours\n" +
       "Colors: red, green, yellow, blue, cyan, magenta, white";
 
   public static (int value, TimeUnit unit, ConsoleColor color) Parse(string[] args)
   {
+    if (args.Length == 1 && (args[0] == "-h" || args[0] == "--help"))
+    {
+      Console.WriteLine(Usage);
+      Environment.Exit(0);
+    }
+
     if (args.Length == 1 && (args[0] == "-v" || args[0] == "--version"))
     {
       var version = typeof(ArgParser).Assembly.GetName().Version;
