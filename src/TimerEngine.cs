@@ -17,5 +17,6 @@ internal static class TimerEngine
     }
 
     ConsoleRenderer.ShowCompletion();
+    Notifier.Send("Tik", "Time is up!");
   }
 }
